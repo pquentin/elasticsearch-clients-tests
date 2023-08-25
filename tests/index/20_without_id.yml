@@ -1,0 +1,20 @@
+---
+"Index without ID":
+
+ - do:
+      index:
+          index: test_serverless
+          body:  { "foo": "bar" }
+
+ - is_true: _id
+ - match: { _index: test_serverless }
+ - set:   { _id:    id }
+
+ - do:
+      get:
+          index: test_serverless
+          id:    '$id'
+
+ - match: { _index:   test_serverless }
+ - match: { _id:      $id }
+ - match: { _source: { "foo": "bar" } }
