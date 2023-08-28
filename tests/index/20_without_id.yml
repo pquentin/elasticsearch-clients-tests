@@ -1,20 +1,20 @@
 ---
 "Index without ID":
 
- - do:
+  - do:
       index:
-          index: test_serverless
+          index: test_serverless_index_20
           body:  { "foo": "bar" }
 
  - is_true: _id
- - match: { _index: test_serverless }
+ - match: { _index: test_serverless_index_20 }
  - set:   { _id:    id }
 
  - do:
       get:
-          index: test_serverless
+          index: test_serverless_index_20
           id:    '$id'
 
- - match: { _index:   test_serverless }
+ - match: { _index:   test_serverless_index_20 }
  - match: { _id:      $id }
  - match: { _source: { "foo": "bar" } }

@@ -3,7 +3,7 @@
 
  - do:
       index:
-          index:  test_serverless
+          index:  test_serverless_delete_10
           id:     "1"
           body:   { foo: bar }
 
@@ -11,7 +11,7 @@
 
  - do:
       delete:
-          index:  test_serverless
+          index:  test_serverless_delete_10
           id:     "1"
 
  - match: { result: deleted }
