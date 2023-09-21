@@ -1,0 +1,23 @@
+---
+"Basic bulk operation":
+
+  - do:
+      bulk:
+        refresh: true
+        body:
+          - index:
+              _index: test_serverless_bulk_10
+              _id:    test_id
+          - f1: v1
+            f2: 42
+          - index:
+              _index: test_serverless_bulk_10
+              _id:    test_id2
+          - f1: v2
+            f2: 47
+
+  - do:
+      count:
+        index: test_serverless_bulk_10
+
+  - match: {count: 2}

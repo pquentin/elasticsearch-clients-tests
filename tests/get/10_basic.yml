@@ -1,0 +1,17 @@
+---
+"Basic":
+
+  - do:
+      index:
+        index: test_serverless_get_10
+        id:    "1"
+        body:  { "foo": "bar" }
+
+  - do:
+      get:
+        index: test_serverless_get_10
+        id:    "1"
+
+  - match: { _index:   "test_serverless_get_10" }
+  - match: { _id:      "1"      }
+  - match: { _source:  { "foo": "bar"} }
