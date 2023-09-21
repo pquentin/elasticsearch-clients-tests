@@ -15,3 +15,9 @@
           id:     "1"
 
  - match: { result: deleted }
+
+---
+  teardown:
+    - do:
+        indices.delete:
+          index: test_serverless_delete_10

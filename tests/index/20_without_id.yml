@@ -18,3 +18,9 @@
   - match: { _index:   test_serverless_index_20 }
   - match: { _id:      $id }
   - match: { _source: { "foo": "bar" } }
+
+---
+  teardown:
+    - do:
+        indices.delete:
+          index: test_serverless_index_20

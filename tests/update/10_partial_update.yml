@@ -33,3 +33,9 @@
   - match: { _source.count:      1   }
   - match: { _source.nested.one: 3   }
   - match: { _source.nested.two: 2   }
+
+---
+  teardown:
+    - do:
+        indices.delete:
+          index: test_serverless_update_10
