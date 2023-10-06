@@ -21,3 +21,9 @@
         index: test_serverless_bulk_10
 
   - match: {count: 2}
+
+---
+  teardown:
+    - do:
+        indices.delete:
+          index: test_serverless_bulk_10
