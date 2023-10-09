@@ -1,0 +1,7 @@
+---
+"cat.component_templates":
+
+  - do:
+      cat.component_templates
+  - match:
+      $status: 200

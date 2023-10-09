@@ -1,0 +1,6 @@
+---
+"cat.transforms":
+
+  - do:
+      cat.transforms
+  - match: { $status: 200 }

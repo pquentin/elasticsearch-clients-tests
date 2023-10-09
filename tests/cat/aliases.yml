@@ -1,0 +1,6 @@
+---
+"cat.aliases":
+
+  - do:
+      cat.aliases
+  - match: { $status: 200 }

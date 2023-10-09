@@ -1,5 +1,5 @@
 ---
-"Help for the cat API":
+"cat.help":
 
   - do:
       cat.help

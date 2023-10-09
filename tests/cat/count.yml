@@ -1,0 +1,7 @@
+---
+"cat.count":
+
+  - do:
+      cat.count
+  - match:
+      $status: 200
