@@ -4,4 +4,4 @@
   - do:
       cat.component_templates
   - match:
-      $status: 200
+      $body: 'elastic'
