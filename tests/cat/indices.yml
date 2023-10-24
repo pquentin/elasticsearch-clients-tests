@@ -1,8 +1,8 @@
 ---
 setup:
   - do:
-    - indices.create:
-        index: 'test_sl_cat_indices'
+      - indices.create:
+          index: 'test_sl_cat_indices'
 
 ---
 teardown:

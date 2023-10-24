@@ -17,7 +17,7 @@
   - match: { _source:  { "foo": "bar"} }
 
 ---
-  teardown:
-    - do:
-        indices.delete:
-          index: test_serverless_get_10
+teardown:
+  - do:
+      indices.delete:
+        index: test_serverless_get_10

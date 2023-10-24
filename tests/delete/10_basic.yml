@@ -1,23 +1,22 @@
 ---
 "Basic":
-
- - do:
+  - do:
       index:
-          index:  test_serverless_delete_10
-          id:     "1"
-          body:   { foo: bar }
+        index:  test_serverless_delete_10
+        id:     "1"
+        body:   { foo: bar }
 
- - match:   { _version: 1 }
+  - match:   { _version: 1 }
 
- - do:
+  - do:
       delete:
-          index:  test_serverless_delete_10
-          id:     "1"
+        index:  test_serverless_delete_10
+        id:     "1"
 
- - match: { result: deleted }
+  - match: { result: deleted }
 
 ---
-  teardown:
-    - do:
-        indices.delete:
-          index: test_serverless_delete_10
+teardown:
+  - do:
+    indices.delete:
+      index: test_serverless_delete_10
