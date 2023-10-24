@@ -1,0 +1,7 @@
+---
+"cat.help":
+
+  - do:
+      cat.help
+  - match:
+      $body: '=^.^='

@@ -1,0 +1,30 @@
+---
+setup:
+  - do:
+      index:
+        index: 'test_cat_transforms'
+        body: { 'foo': 'bar' }
+  - do:
+      transform.put_transform:
+        transform_id: soundwave,
+        body: {
+          source: {index: test_cat_transforms },
+          dest: { index: transformed_index },
+          pivot: {
+            group_by: { pop: { terms: { field: 'pop' } } },
+            aggregations: { max_pop: { max: { field: 'pop' } } }
+          }
+        }
+---
+teardown:
+  - do:
+      indices.delete:
+        index: 'test_cat_transforms'
+  - do:
+      transforms.delete_transform:
+        transform_id: 'soundwave'
+---
+"cat.transforms":
+  - do:
+      cat.transforms
+  - match: { $body: transform_id }
