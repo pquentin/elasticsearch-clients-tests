@@ -21,7 +21,7 @@ teardown:
       indices.delete:
         index: 'test_cat_transforms'
   - do:
-      transforms.delete_transform:
+      transform.delete_transform:
         transform_id: 'soundwave'
 ---
 "cat.transforms":
