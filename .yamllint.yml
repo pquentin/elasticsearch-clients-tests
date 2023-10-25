@@ -5,3 +5,5 @@ rules:
   indentation:
     level: error
     spaces: consistent
+  colons: disable
+  braces: disable
