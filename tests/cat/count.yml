@@ -13,6 +13,6 @@ teardown:
 "cat.count":
 
   - do:
-      cat.count
+      cat.count: {}
   - match:
       $body: "\n"

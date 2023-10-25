@@ -2,10 +2,10 @@
 "Index with ID":
 
   - do:
-    index:
-      index: test_serverless_index_10
-      id:    "1"
-      body:  { "foo": "bar" }
+      index:
+        index: test_serverless_index_10
+        id:    "1"
+        body:  { "foo": "bar" }
 
   - match: { _index: test_serverless_index_10 }
   - match: { _id:    "1" }

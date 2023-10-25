@@ -2,6 +2,6 @@
 "cat.component_templates":
 
   - do:
-      cat.component_templates
+      cat.component_templates: {}
   - match:
       $body: 'elastic'
