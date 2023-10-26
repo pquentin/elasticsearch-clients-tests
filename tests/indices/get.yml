@@ -11,9 +11,9 @@ teardown:
 
 ---
 "indices.get":
-- do:
-    indices.get:
-      index: 'indices_get_test'
+  - do:
+      indices.get:
+        index: 'indices_get_test'
 
-- match: { indices_get_test.aliases: {} }
-- match: { indices_get_test.mappings: {} }
+  - match: { indices_get_test.aliases: {} }
+  - match: { indices_get_test.mappings: {} }

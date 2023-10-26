@@ -10,14 +10,14 @@ teardown:
         index: 'test_index_exists'
 ---
 'indices.exists':
-- do:
-    indices.exists:
-      index: 'test_index_exists'
+  - do:
+      indices.exists:
+        index: 'test_index_exists'
 
-- is_true: ''
+  - is_true: ''
 
-- do:
-    indices.exists:
-      index: 'index_that_shouldnt_exist'
+  - do:
+      indices.exists:
+        index: 'index_that_shouldnt_exist'
 
-- is_false: ''
+  - is_false: ''

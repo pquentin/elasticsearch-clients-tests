@@ -11,8 +11,8 @@ teardown:
 
 ---
 "indices.refresh":
-- do:
-    indices.refresh:
-      index: 'indices_refresh_get'
+  - do:
+      indices.refresh:
+        index: 'indices_refresh_get'
 
-- match: { _shards.successful: 1 }
+  - match: { _shards.successful: 1 }
