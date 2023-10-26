@@ -5,14 +5,14 @@ setup:
         index: 'test_cat_count'
         body:  { "foo": "bar" }
 ---
-  teardown:
-    - do:
-        indices.delete:
-          index: 'test_cat_count'
+teardown:
+  - do:
+      indices.delete:
+        index: 'test_cat_count'
 ---
 "cat.count":
 
   - do:
-      cat.count
+      cat.count: {}
   - match:
       $body: "\n"

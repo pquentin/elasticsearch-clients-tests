@@ -3,22 +3,22 @@
 
   - do:
       index:
-          index:  test_serverless_update_10
-          id:     "1"
-          body:
-              foo:    bar
-              count:  1
-              nested: { one: 1, two: 2 }
+        index:  test_serverless_update_10
+        id:     "1"
+        body:
+          foo:    bar
+          count:  1
+          nested: { one: 1, two: 2 }
 
   - do:
       update:
-          index:  test_serverless_update_10
-          id:     "1"
-          body:
-            doc:
-                foo:    baz
-                nested:
-                    one:  3
+        index:  test_serverless_update_10
+        id:     "1"
+        body:
+          doc:
+            foo:    baz
+            nested:
+              one:  3
 
   - match: { _index:   test_serverless_update_10 }
   - match: { _id:      "1"    }
@@ -26,8 +26,8 @@
 
   - do:
       get:
-          index:  test_serverless_update_10
-          id:     "1"
+        index:  test_serverless_update_10
+        id:     "1"
 
   - match: { _source.foo:        baz }
   - match: { _source.count:      1   }
@@ -35,7 +35,7 @@
   - match: { _source.nested.two: 2   }
 
 ---
-  teardown:
-    - do:
-        indices.delete:
-          index: test_serverless_update_10
+teardown:
+  - do:
+      indices.delete:
+        index: test_serverless_update_10

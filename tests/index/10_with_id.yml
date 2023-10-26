@@ -1,28 +1,28 @@
 ---
 "Index with ID":
 
- - do:
+  - do:
       index:
-          index: test_serverless_index_10
-          id:    "1"
-          body:  { "foo": "bar" }
+        index: test_serverless_index_10
+        id:    "1"
+        body:  { "foo": "bar" }
 
- - match: { _index: test_serverless_index_10 }
- - match: { _id:    "1" }
- - match: { _version: 1 }
+  - match: { _index: test_serverless_index_10 }
+  - match: { _id:    "1" }
+  - match: { _version: 1 }
 
- - do:
+  - do:
       get:
-          index: test_serverless_index_10
-          id:    "1"
+        index: test_serverless_index_10
+        id:    "1"
 
- - match: { _index:   test_serverless_index_10 }
- - match: { _id:      "1" }
- - match: { _version: 1 }
- - match: { _source: { "foo": "bar" }}
+  - match: { _index:   test_serverless_index_10 }
+  - match: { _id:      "1" }
+  - match: { _version: 1 }
+  - match: { _source: { "foo": "bar" }}
 
 ---
-  teardown:
-    - do:
-        indices.delete:
-          index: test_serverless_index_10
+teardown:
+  - do:
+      indices.delete:
+        index: test_serverless_index_10
