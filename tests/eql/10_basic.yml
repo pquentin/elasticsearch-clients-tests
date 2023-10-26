@@ -2,18 +2,18 @@
 setup:
   - do:
       indices.create:
-          index:  eql_test
-          body:
-            mappings:
-              properties:
-                some_keyword:
-                  type: keyword
-                  ignore_above: 5 # see https://github.com/elastic/elasticsearch/issues/77152
-              runtime:
-                day_of_week:
-                  type: keyword
-                  script:
-                    source: "emit(doc['@timestamp'].value.dayOfWeekEnum.getDisplayName(TextStyle.FULL, Locale.ROOT))"
+        index:  eql_test
+        body:
+          mappings:
+            properties:
+              some_keyword:
+                type: keyword
+                ignore_above: 5 # see https://github.com/elastic/elasticsearch/issues/77152
+            runtime:
+              day_of_week:
+                type: keyword
+                script:
+                  source: "emit(doc['@timestamp'].value.dayOfWeekEnum.getDisplayName(TextStyle.FULL, Locale.ROOT))"
   - do:
       bulk:
         refresh: true

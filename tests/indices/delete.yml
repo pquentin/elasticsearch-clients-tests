@@ -6,8 +6,7 @@ setup:
 
 ---
 "indices.delete":
- - do:
-     indices.delete:
-          index:  test_indices_delete_10
-
- - match: { acknowledged: true }
+  - do:
+      indices.delete:
+        index:  test_indices_delete_10
+  - match: { acknowledged: true }
