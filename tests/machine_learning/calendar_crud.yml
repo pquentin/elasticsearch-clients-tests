@@ -1,17 +1,17 @@
 ---
 teardown:
   - do:
-      machine_learning.delete_calendar:
+      ml.delete_calendar:
         calendar_id: "advent"
   - do:
-      machine_learning.delete_calendar:
+      ml.delete_calendar:
         calendar_id: "weeks_of_the_year"
   - do:
-      machine_learning.delete_job:
+      ml.delete_job:
         job_id: 'cal'
         wait_for_completion: true
   - do:
-      machine_learning.delete_job:
+      ml.delete_job:
         job_id: 'cal2'
         wait_for_completion: true
 
