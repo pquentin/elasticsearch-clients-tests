@@ -30,5 +30,6 @@ teardown:
 ---
 "cat.transforms":
   - do:
-      cat.transforms: {}
-  - match: { $body: 'transform_id' }
+      cat.transforms:
+        format: 'json'
+  - match: { 0.id: 'transform_id' }

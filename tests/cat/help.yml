@@ -8,4 +8,4 @@ requires:
   - do:
       cat.help: {}
   - match:
-      $body: '=^.^='
+      $body: "/=\\^.\\^=/"

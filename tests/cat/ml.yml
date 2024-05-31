@@ -5,14 +5,18 @@ requires:
 ---
 "cat.ml":
   - do:
-      cat.ml_data_frame_analytics
+      cat.ml_data_frame_analytics:
+        format: 'json'
   - is_true: ""
   - do:
-      cat.ml_datafeeds
+      cat.ml_datafeeds:
+        format: 'json'
   - is_true: ""
   - do:
-      cat.ml_jobs
+      cat.ml_jobs:
+        format: 'json'
   - is_true: ""
   - do:
-      cat.ml_trained_models
+      cat.ml_trained_models:
+        format: 'json'
   - is_true: ""
