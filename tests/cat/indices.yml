@@ -18,4 +18,5 @@ teardown:
   - do:
       cat.indices:
         index: 'test_sl_cat_indices'
-  - match: { $body: 'test_sl_cat_indices' }
+        format: 'json'
+  - match: { 0.index: 'test_sl_cat_indices' }

@@ -19,4 +19,4 @@ teardown:
   - do:
       cat.count: {}
   - match:
-      $body: "\n"
+      $body: "/\n/"

@@ -19,5 +19,6 @@ teardown:
 ---
 "cat.aliases":
   - do:
-      cat.aliases: {}
-  - match: { $body.0.alias: 'my_alias' }
+      cat.aliases:
+        format: 'json'
+  - match: { 0.alias: 'my_alias' }
