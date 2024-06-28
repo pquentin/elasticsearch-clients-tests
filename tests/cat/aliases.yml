@@ -21,4 +21,5 @@ teardown:
   - do:
       cat.aliases:
         format: 'json'
+        expand_wildcards: 'open'
   - match: { 0.alias: 'my_alias' }
