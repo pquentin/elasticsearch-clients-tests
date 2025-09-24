@@ -49,9 +49,18 @@ teardown:
         snapshot: snapshot
         ignore: 404
   - do:
+      snapshot.delete_repository:
+        repository: repository-test
+        ignore: 404
+  - do:
       indices.delete:
         index: test_snapshots_searchable
         ignore: 404
+  - do:
+      indices.delete_data_stream:
+        name: "*,.*"
+        expand_wildcards: all
+
 ---
 'Searchable Snapshots':
   - do:
