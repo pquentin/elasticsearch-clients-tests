@@ -6,7 +6,7 @@ requires:
 teardown:
   - do:
       indices.delete:
-        index: connectors-test
+        index: elastic-connectors-v1
         ignore: 404
 ---
 "Connector":
